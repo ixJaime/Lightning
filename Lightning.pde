@@ -1,7 +1,7 @@
-int startX = -5;
-int startY = 150;
-int endX = 0;
-int endY = 150;
+int startX = 150;
+int startY = 0;
+int endX = 100;
+int endY = 200;
 
 void setup(){
   size(300,300); 
@@ -10,21 +10,32 @@ void setup(){
 }
 
 void draw() {
-  stroke(0);
+  background(0);
+  stroke(255,255,204);
   
   while (endX < 500) {
-    endX = startX + (int)(Math.random()*10);
-    endY = startY + (int)(Math.random()*19)-9;
+    endX = startX + (int)(Math.random()*25)-7;
+    endY = startY + (int)(Math.random()*70)-6;
     line(startX, startY, endX, endY);
     startX = endX;
     startY = endY;
   }
+  clouds();
+ }
 
+void clouds() {
+  fill(128, 128, 128);
+  stroke(128, 128, 128);
+  ellipse(130, 0, 140, 120);
+  ellipse(25, 0, 140, 120);
+  ellipse(200, 0, 140, 120);
+  ellipse(250, 0, 140, 120);
+  
 }
 void mousePressed() {
   background(255);
-   startX = -5;
-   startY = 150;
-   endX = 0;
-   endY = 150;
+   startX = 150;
+   startY = 0;
+   endX = 100;
+   endY = 200;
 }
